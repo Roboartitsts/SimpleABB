@@ -2,7 +2,7 @@ import serial
 import time
 class ABBRunner():
 
-	def __init__(self, width, height):
+	def __init__(self, width=2530, height=2530):
 		self.ser = None
 		self.connected = False
 		self.width = width
@@ -82,6 +82,7 @@ class ABBRunner():
 	def connectToSerial(self, port):
 		self.ser = serial.Serial(port, 115200, timeout=0.1)
 		self.connected = True
+		self.sendCanvasInfo()
 
 	def readSerial(self,):
 		msg = self.ser.read(2)
