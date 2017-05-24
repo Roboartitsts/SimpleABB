@@ -37,11 +37,14 @@ class ABBRunner():
 		msg = "BRUSHDOWN;"
 		return self.sendSerial(msg)
 
-	def grip(self, toSqueeze):
-		if toSqueeze:
-			msg = "GRIPV" + str(toSqueeze)+ ";"
+	def gripOpen(self):
+		msg = "GRIPOPEN;"
 		return self.sendSerial(msg)
 
+	def gripClose(self):
+		msg = "GRIPCLOSE;"
+		return self.sendSerial(msg)
+		
 	def moveToSafe(self,):
 		if not self.connected:
 			return False
