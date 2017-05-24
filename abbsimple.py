@@ -138,7 +138,7 @@ class ABBRunner():
     def connectToSerial(self, port):
         """
         connects to the specified serial port
-        
+
         Parameters
         ----------
         port : str
